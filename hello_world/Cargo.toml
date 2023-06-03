@@ -1,0 +1,21 @@
+[package]
+name = "soroban-hello-world-token-contract"
+version = "0.0.0"
+authors = ["xyclooLabs <hello@xycloo.com>"]
+license = "Apache-2.0"
+edition = "2021"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+doctest = false
+
+[dependencies]
+soroban-sdk = { version = "0.8.4" }
+token_macro_derive = { path = "../token_macro/token_macro_derive" }
+token_macro = { path = "../token_macro" } 
+soroban-token-sdk = { version = "0.8.4" }
+
+[dev_dependencies]
+soroban-sdk = { version = "0.8.4", features = ["testutils"] }
+
