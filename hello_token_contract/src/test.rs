@@ -1,7 +1,4 @@
-#![cfg(test)]
-
-//use super::*;
-use soroban_sdk::{vec, Env, Symbol};
+use soroban_sdk::{testutils::Address as _, vec, Address, Env, IntoVal, Symbol};
 
 mod contract {
     soroban_sdk::contractimport!(
@@ -21,8 +18,6 @@ fn test() {
         vec![&env, Symbol::short("Hello"), Symbol::short("Dev"),]
     );
 }
-
-use soroban_sdk::{testutils::Address as _, Address, IntoVal};
 
 fn create_token<'a>(e: &Env, admin: &Address) -> contract::Client<'a> {
     let token = contract::Client::new(e, &e.register_contract_wasm(None, contract::WASM));
